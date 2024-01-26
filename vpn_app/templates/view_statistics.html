@@ -1,0 +1,27 @@
+<!-- vpn_app/templates/view_statistics.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Statistics</title>
+</head>
+<body>
+    <h1>View Statistics</h1>
+    
+    <h2>Site Statistics:</h2>
+    <ul>
+        {% for site_name, stats in site_statistics.items %}
+            <li>{{ site_name }}:
+                <ul>
+                    <li>Visits: {{ stats.visits }}</li>
+                    <li>Data Sent: {{ stats.data_sent }} bytes</li>
+                    <li>Data Received: {{ stats.data_received }} bytes</li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Total Data:</h2>
+    <p>Data Sent: {{ total_data_sent }} bytes</p>
+    <p>Data Received: {{ total_data_received }} bytes</p>
+</body>
+</html>

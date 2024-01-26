@@ -1,0 +1,19 @@
+<!-- templates/view_user_details.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <ul>
+        {% for attribute in user_attributes %}
+            <li>{{ attribute.0 }}: {{ attribute.1 }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        <li><a href="{% url 'edit_profile' user_id=user.id %}">Update your profile</a></li>
+
+    </ul>
+</body>
+</html>

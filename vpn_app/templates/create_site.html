@@ -1,0 +1,18 @@
+<!-- vpn_app/templates/create_site.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Site</title>
+</head>
+<body>
+    <h1>Create a new site</h1>
+    <form method="post" action="{% url 'create_site' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="url">URL:</label>
+        <input type="url" id="url" name="url" required><br>
+        <button type="submit">Create Site</button>
+    </form>
+</body>
+</html>
